@@ -16,7 +16,7 @@ export class MicroScreenshotScenario extends Scenario {
         let message1 = FakeGenerator.textMessage(user!);
         message1.dateTime = new Date();
         message1.text = 'Вот такая ошибка вылезла на проде, посмотришь?';
-        message1.imageUrl = '/assets/micro-screenshot.png';
+        message1.imageUrl = 'assets/micro-screenshot.png';
 
         this.builder
             .init(chatboxData)
