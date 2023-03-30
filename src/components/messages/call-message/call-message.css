@@ -1,0 +1,22 @@
+.text.call {
+    display: flex;
+    flex-direction: row;
+}
+
+.call.missed .icon {
+    color: red;
+}
+
+.call.accepted .icon {
+    color: green;
+}
+
+.call .content {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.call .duration {
+    font-size: small;
+    color: gray;
+}

@@ -1,0 +1,74 @@
+.rounded-avatar {
+    border-radius: 50%;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.bg-reject {
+    background-color: #dc3545;
+}
+
+.bg-accept {
+    background-color: #28a745;
+}
+
+.white-text {
+    color: white;
+}
+
+.animated-pulse {
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.call-modal .modal-dialog {
+    max-width: 400px;
+}
+
+.call-modal .modal-title {
+    margin: auto;
+}
+
+.call-modal .accept-button {
+    background-color: #28a745;
+}
+
+.call-modal .reject-button {
+    background-color: #dc3545;
+}
+
+.call-modal .action-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-right: 1em;
+    margin-left: 1em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.call-modal .action-button:hover {
+    transform: scale(1.1);
+}
