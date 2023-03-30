@@ -1,6 +1,7 @@
 import React from 'react';
 import {chatStore} from '../../stores/chat-store';
 import {observer} from 'mobx-react';
+import {reaction} from 'mobx';
 
 export interface MessageFormProps {
     onAutoresize?: (delta: number) => void;
@@ -18,6 +19,10 @@ export class MessageForm extends React.Component<MessageFormProps> {
 
         this.messageBox = React.createRef();
         this.formContainer = React.createRef();
+
+        reaction(() => chatStore.messageFormText, () => {
+            this.messageBox.current?.focus();
+        });
     }
 
     render() {
