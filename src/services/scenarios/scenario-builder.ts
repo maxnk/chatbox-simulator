@@ -14,6 +14,7 @@ import {IncomingCallAction} from '../actions/incoming-call-action';
 import {EraseMessageAction} from '../actions/erase-message-action';
 import {SendMessageAction} from '../actions/send-message-action';
 import {PlayAudioAction} from '../actions/play-audio-action';
+import {AddUserAction} from '../actions/add-user-action';
 
 export class ScenarioBuilder {
     public readonly actions: Action[] = [];
@@ -93,6 +94,13 @@ export class ScenarioBuilder {
 
     playAudio(path: string) {
         let action = new PlayAudioAction(path);
+        this.actions.push(action);
+
+        return this;
+    }
+
+    addUser(chat: Chat, inviter: User, invitee: User, dateTime?: Date) {
+        let action = new AddUserAction(chat, inviter, invitee, dateTime);
         this.actions.push(action);
 
         return this;

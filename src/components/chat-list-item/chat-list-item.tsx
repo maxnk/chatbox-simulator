@@ -10,10 +10,6 @@ export class ChatListItem extends React.Component<{ chat: Chat, isActive: boolea
     render() {
         const lastMessage = this.props.chat.getLastMessage();
 
-        if (!lastMessage) {
-            return null;
-        }
-
         return (
             <div
                 className={'discussion' + (this.props.isActive ? ' message-active': '')}
@@ -29,12 +25,13 @@ export class ChatListItem extends React.Component<{ chat: Chat, isActive: boolea
                 </div>
                 <div className='desc-contact'>
                     <p className='name'>{this.props.chat.title}</p>
-                    <p className='message'>{lastMessage?.text ?? ''}</p>
+                    <p className='message'>{lastMessage?.text ?? '...'}</p>
                 </div>
                 <div className='meta'>
-                    <div className='timer'>
-                        <TimeAgo datetime={lastMessage.dateTime} locale='custom-locale'  />
-                    </div>
+                    {lastMessage &&
+                        <div className='timer'>
+                            <TimeAgo datetime={lastMessage?.dateTime} locale='custom-locale'  />
+                        </div>}
                     {
                         this.props.chat.getUnreadMessagesCount() > 0 && <div className='unread'>
                             {this.props.chat.getUnreadMessagesCount()}

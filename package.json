@@ -18,6 +18,7 @@
     "bootstrap": "^5.2.3",
     "date-fns": "^2.29.3",
     "mobx-react": "^8.0.0",
+    "petrovich": "^0.2.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",

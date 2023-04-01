@@ -56,6 +56,12 @@ export default class TextMessageData extends UserMessageData {
     ) {
         super(id, text, dateTime, isRead, user);
     }
+
+    withImageUrl(imageUrl: string) {
+        this.imageUrl = imageUrl;
+
+        return this;
+    }
 }
 
 export class CallMessageData extends UserMessageData {

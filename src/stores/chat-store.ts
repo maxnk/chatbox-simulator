@@ -147,6 +147,13 @@ export class ChatStore {
         });
     }
 
+    addUser(chat: Chat, invitee: User) {
+        runInAction(() => {
+            chat.users.push(invitee);
+            this.workaround++;
+        });
+    }
+
     private onChatsChanged() {
         this.chats.sort((a, b) => {
             const bMessage = b.getLastMessage();

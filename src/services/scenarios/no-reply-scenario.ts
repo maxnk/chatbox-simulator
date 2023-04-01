@@ -14,7 +14,6 @@ export class NoReplyScenario extends Scenario {
         chat!.messages = [];
         let user = chat?.users.find(user => user.id !== chatboxData.currentUser.id);
         user!.name = 'Андрей Апишкин';
-        chat!.title = 'Андрей Апишкин';
 
         const currentTime = new Date();
 
