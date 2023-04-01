@@ -24,7 +24,7 @@ export class UdpScenario extends Scenario {
                     .withText('Народ, у нас пользователи жалуются, что им письма не приходят')
             )
             .wait(3000)
-            .playAudio('assets/crickets.mp3')
+            .playAudio(process.env.PUBLIC_URL + '/assets/crickets.mp3')
             .wait(2000);
 
         for (let i = 1; i < otherUsers.length; i++) {
