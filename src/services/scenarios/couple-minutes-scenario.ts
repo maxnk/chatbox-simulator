@@ -25,7 +25,7 @@ export class CoupleMinutesScenario extends Scenario {
             .outgoingMessage(chat!, FakeGenerator.textMessage(chatboxData.currentUser)
                 .withDateTime(subHours(currentTime, 2))
                 .withText('привет, ага'))
-            .incomingCallMessage(chat!, FakeGenerator.callMessage(user!, 5718 /* 1:35:18 */ )
+            .callMessage(chat!, FakeGenerator.callMessage(user!, 5718 /* 1:35:18 */ )
                 .withDateTime(subMinutes(currentTime, 30)));
     }
 }

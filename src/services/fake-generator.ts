@@ -66,7 +66,7 @@ export class FakeGenerator {
         );
     }
 
-    static callMessage(fromUser: User, durationInSeconds: number): CallMessageData {
+    static callMessage(fromUser: User, durationInSeconds?: number): CallMessageData {
         return new CallMessageData(
             faker.datatype.uuid(),
             'call...',

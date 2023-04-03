@@ -42,12 +42,12 @@ export class CallMessage extends React.Component<{ message: CallMessageData }> {
                                 </span>
                                 <div className='content'>
                                     <div className='label'>{isOutgoing ? 'Outgoing' : 'Incoming'} call</div>
-                                    <div className='duration'>{formatDuration({
+                                    {this.props.message.duration && <div className='duration'>{formatDuration({
                                         // pretend that call cannot be longer than 24 hours ;)
                                         hours: Math.floor(this.props.message.duration / 3600),
                                         minutes: Math.floor(this.props.message.duration / 60) % 60,
                                         seconds: this.props.message.duration % 60
-                                    })}</div>
+                                    })}</div>}
                                 </div>
                             </div>
                         </div>

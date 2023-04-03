@@ -107,7 +107,7 @@ export class ScenarioBuilder {
         return this;
     }
 
-    incomingCallMessage(chat: Chat, callMessageData: CallMessageData) {
+    callMessage(chat: Chat, callMessageData: CallMessageData) {
         let action = new CallMessageAction(chat, callMessageData);
         this.actions.push(action);
 

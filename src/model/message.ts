@@ -71,9 +71,15 @@ export class CallMessageData extends UserMessageData {
         dateTime: Date,
         isRead: boolean,
         user: User,
-        public duration: number, // in seconds
-        public isMissed: boolean
+        public duration?: number, // in seconds
+        public isMissed: boolean = true,
     ) {
         super(id, text, dateTime, isRead, user);
+    }
+
+    withIsMissed(isMissed: boolean) {
+        this.isMissed = isMissed;
+
+        return this;
     }
 }
