@@ -20,6 +20,7 @@ import {LastQuestionScenario} from '../../services/scenarios/last-question-scena
 import { reaction } from 'mobx';
 import {UdpScenario} from '../../services/scenarios/udp-scenario';
 import {RedirectScenario} from '../../services/scenarios/redirect-scenario';
+import {CoupleMinutesScenario} from '../../services/scenarios/couple-minutes-scenario';
 
 @observer
 export class MainContainer extends React.Component<any> {
@@ -102,6 +103,9 @@ export class MainContainer extends React.Component<any> {
                         <Button disabled={chatStore.isScenarioRunning} onClick={() => {
                             this.scenarioRunner.start(new RedirectScenario());
                         }}>{RedirectScenario.NAME}</Button>
+                        <Button disabled={chatStore.isScenarioRunning} onClick={() => {
+                            this.scenarioRunner.start(new CoupleMinutesScenario());
+                        }}>{CoupleMinutesScenario.NAME}</Button>
                     </div>
                 </div>
                 <ImageModal/>

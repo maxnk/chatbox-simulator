@@ -5,6 +5,8 @@ import {register} from 'timeago.js';
 import {observer} from 'mobx-react';
 import {configure} from 'mobx';
 import {MainContainer} from './components/main-container/main-container';
+import {setDefaultOptions} from 'date-fns';
+import {ru} from 'date-fns/locale';
 
 faker.locale = 'ru';
 
@@ -43,5 +45,9 @@ function initTimeago() {
 // register your locale with timeago
   register('custom-locale', localeFunc);
 }
+
+setDefaultOptions({
+  locale: ru
+});
 
 export default observer(App);

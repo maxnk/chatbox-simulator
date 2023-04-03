@@ -4,7 +4,7 @@ import {chatStore} from '../../stores/chat-store';
 import {observer} from 'mobx-react';
 import {FiUsers} from 'react-icons/fi';
 import {FaEllipsisH} from 'react-icons/fa';
-import TextMessageData, {MessageData, SystemMessageData, UserMessageData} from '../../model/message';
+import TextMessageData, {CallMessageData, MessageData, SystemMessageData, UserMessageData} from '../../model/message';
 import {TimeMessage} from '../messages/time-message/time-message';
 import {TypingMessage} from '../messages/typing-message/typing-message';
 import {TextMessage} from '../messages/text-message/text-message';
@@ -12,6 +12,7 @@ import {MessageForm} from '../message-form/message-form';
 import {Chat} from '../../model/chat';
 import {User} from '../../model/user';
 import {SystemMessage} from '../messages/system-message/system-message';
+import {CallMessage} from '../messages/call-message/call-message';
 
 @observer
 export class ChatContainer extends Component<{chat: Chat, currentUser: User}> {
@@ -70,27 +71,15 @@ export class ChatContainer extends Component<{chat: Chat, currentUser: User}> {
                                 {x instanceof SystemMessageData &&
                                     <SystemMessage message={x} ref={x.id}/>}
 
+                                {x instanceof CallMessageData &&
+                                    <CallMessage message={x} ref={x.id}/>}
+
                                 {this.getIsShowDate(i, nextMessage, x) &&
                                     <DateMessage message={{
                                         type: 'date',
                                         dateTime: x.dateTime,
                                     }} ref={x.id}/>}
                             </>;
-
-                            // switch (x.type) {
-                            //     case 'call':
-                            //         return <CallMessage message={x as CallMessageData} ref={x.type + x.dateTime} />;
-                            //     // case 'time':
-                            //     //     return <TimeMessage message={x as TimeMessageData} ref={x.type + x.dateTime} />;
-                            //     // case 'date':
-                            //     //     return <DateMessage message={x as DateMessageData} ref={x.type + x.dateTime} />;
-                            //     case 'text':
-                            //         return <TextMessage message={x as TextMessageData} ref={x.type + x.dateTime} />;
-                            //     case 'system':
-                            //         return <SystemMessage message={x as SystemMessageData} ref={x.type + x.dateTime} />;
-                            //     default:
-                            //         return <div></div>;
-                            // }
                         })
                     }
                 </div>

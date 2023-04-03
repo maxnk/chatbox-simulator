@@ -3,7 +3,7 @@ import {avataaars} from '@dicebear/collection';
 import {User} from '../model/user';
 import {faker, Sex} from '@faker-js/faker';
 import {Chat} from '../model/chat';
-import TextMessageData, {MessageData, SystemMessageData} from '../model/message';
+import TextMessageData, {CallMessageData, MessageData, SystemMessageData} from '../model/message';
 import {ChatboxData} from '../model/chatbox-data';
 
 export class FakeGenerator {
@@ -63,6 +63,21 @@ export class FakeGenerator {
                 max: new Date().getTime()
             }),
             faker.datatype.boolean(),
+        );
+    }
+
+    static callMessage(fromUser: User, durationInSeconds: number): CallMessageData {
+        return new CallMessageData(
+            faker.datatype.uuid(),
+            'call...',
+            faker.datatype.datetime({
+                min: (new Date().getTime()) - 1000 * 60 * 60 * 24,
+                max: new Date().getTime()
+            }),
+            faker.datatype.boolean(),
+            fromUser,
+            durationInSeconds,
+            false
         );
     }
 

@@ -1,6 +1,6 @@
 import {Action} from '../actions/actions';
 import {ChatboxData} from '../../model/chatbox-data';
-import TextMessageData, {SystemMessageData} from '../../model/message';
+import TextMessageData, {CallMessageData, SystemMessageData} from '../../model/message';
 import {Chat} from '../../model/chat';
 import {InitAction} from '../actions/init-action';
 import {IncomingMessageAction} from '../actions/incoming-message-action';
@@ -15,6 +15,7 @@ import {EraseMessageAction} from '../actions/erase-message-action';
 import {SendMessageAction} from '../actions/send-message-action';
 import {PlayAudioAction} from '../actions/play-audio-action';
 import {AddUserAction} from '../actions/add-user-action';
+import {CallMessageAction} from '../actions/call-message-action';
 
 export class ScenarioBuilder {
     public readonly actions: Action[] = [];
@@ -101,6 +102,13 @@ export class ScenarioBuilder {
 
     addUser(chat: Chat, inviter: User, invitee: User, dateTime?: Date) {
         let action = new AddUserAction(chat, inviter, invitee, dateTime);
+        this.actions.push(action);
+
+        return this;
+    }
+
+    incomingCallMessage(chat: Chat, callMessageData: CallMessageData) {
+        let action = new CallMessageAction(chat, callMessageData);
         this.actions.push(action);
 
         return this;

@@ -9,7 +9,6 @@ export class HelloCallScenario extends Scenario {
         super();
 
         let chatboxData = FakeGenerator.initialChatboxData();
-        console.log(chatboxData);
 
         let chat = chatboxData.chats.find(chat => !chat.isGroup());
         chat!.messages = [];
