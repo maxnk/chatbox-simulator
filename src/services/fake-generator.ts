@@ -114,7 +114,7 @@ export class FakeGenerator {
             if (Math.random() < one2oneChatProbability) {
                 chatUsers.push(users[i + 1]);
             } else {
-                for (let j = 0; j < Math.floor(Math.random() * maxUsersPerChat) + 1; j++) {
+                for (let j = 0; j < Math.max(Math.floor(Math.random() * maxUsersPerChat) + 1, 3); j++) {
                     let randomUser = users[j + 1];
                     chatUsers.push(randomUser);
                 }

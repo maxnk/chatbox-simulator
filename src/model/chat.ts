@@ -4,8 +4,7 @@ import {createAvatar} from '@dicebear/core';
 import {initials} from '@dicebear/collection';
 
 export class Chat {
-    private _title?: string;
-    private readonly _groupTitle?;
+    private _groupTitle?;
 
     constructor(
         public id: string,
@@ -20,7 +19,7 @@ export class Chat {
         this.showTyping = showTyping || false;
     }
 
-    get title(): string {
+    get groupTitle(): string {
         return this.isGroup() ? this._groupTitle ?? this.getUsersTitle() : this.users[1].name;
     }
 
@@ -34,8 +33,8 @@ export class Chat {
         return title;
     }
 
-    set title(title: string) {
-        this._title = title;
+    set groupTitle(groupTitle: string) {
+        this._groupTitle = groupTitle;
     }
 
     public isGroup(): boolean {

@@ -37,7 +37,7 @@ export class ChatContainer extends Component<{chat: Chat, currentUser: User}> {
                     </div>
 
                     <div className='title'>
-                        <p className='name'>{this.props.chat.title}</p>
+                        <p className='name'>{this.props.chat.groupTitle}</p>
                         {this.props.chat.isGroup() &&
                             <p className='subtitle'>
                                 <FiUsers/>

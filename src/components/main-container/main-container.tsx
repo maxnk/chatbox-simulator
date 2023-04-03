@@ -22,6 +22,7 @@ import {UdpScenario} from '../../services/scenarios/udp-scenario';
 import {RedirectScenario} from '../../services/scenarios/redirect-scenario';
 import {CoupleMinutesScenario} from '../../services/scenarios/couple-minutes-scenario';
 import {DebtCollectorScenario} from '../../services/scenarios/debt-collector-scenario';
+import {NewChat13Scenario} from '../../services/scenarios/new-chat-13-scenario';
 
 @observer
 export class MainContainer extends React.Component<any> {
@@ -110,6 +111,9 @@ export class MainContainer extends React.Component<any> {
                         <Button disabled={chatStore.isScenarioRunning} onClick={() => {
                             this.scenarioRunner.start(new DebtCollectorScenario());
                         }}>{DebtCollectorScenario.NAME}</Button>
+                        <Button disabled={chatStore.isScenarioRunning} onClick={() => {
+                            this.scenarioRunner.start(new NewChat13Scenario());
+                        }}>{NewChat13Scenario.NAME}</Button>
                     </div>
                 </div>
                 <ImageModal/>

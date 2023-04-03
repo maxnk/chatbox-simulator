@@ -24,7 +24,7 @@ export class ChatListItem extends React.Component<{ chat: Chat, isActive: boolea
                     </div>}
                 </div>
                 <div className='desc-contact'>
-                    <p className='name'>{this.props.chat.title}</p>
+                    <p className='name'>{this.props.chat.groupTitle}</p>
                     <p className='message'>{lastMessage?.text ?? '...'}</p>
                 </div>
                 <div className='meta'>
