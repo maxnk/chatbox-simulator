@@ -3,7 +3,7 @@ import {chatStore} from '../../stores/chat-store';
 import {observer} from 'mobx-react';
 import {Button} from 'react-bootstrap';
 import {ScenarioRunner} from '../../services/scenarios/scenario-runner';
-import {HelloScenario} from '../../services/scenarios/hello-scenario';
+import {MultiHelloScenario} from '../../services/scenarios/multi-hello-scenario';
 import {AppStartScenario} from '../../services/scenarios/app-start-scenario';
 import {MicroScreenshotScenario} from '../../services/scenarios/micro-screenshot-scenario';
 import {NoReplyScenario} from '../../services/scenarios/no-reply-scenario';
@@ -23,6 +23,7 @@ import {RedirectScenario} from '../../services/scenarios/redirect-scenario';
 import {CoupleMinutesScenario} from '../../services/scenarios/couple-minutes-scenario';
 import {DebtCollectorScenario} from '../../services/scenarios/debt-collector-scenario';
 import {NewChat13Scenario} from '../../services/scenarios/new-chat-13-scenario';
+import {HelloScenario} from '../../services/scenarios/hello-scenario';
 
 @observer
 export class MainContainer extends React.Component<any> {
@@ -78,6 +79,9 @@ export class MainContainer extends React.Component<any> {
                         <Button disabled={chatStore.isScenarioRunning} onClick={() => {
                             this.scenarioRunner.start(new HelloScenario());
                         }}>{HelloScenario.NAME}</Button>
+                        <Button disabled={chatStore.isScenarioRunning} onClick={() => {
+                            this.scenarioRunner.start(new MultiHelloScenario());
+                        }}>{MultiHelloScenario.NAME}</Button>
                         <Button disabled={chatStore.isScenarioRunning} onClick={() => {
                             this.scenarioRunner.start(new MicroScreenshotScenario());
                         }}>{MicroScreenshotScenario.NAME}</Button>

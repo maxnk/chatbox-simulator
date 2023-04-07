@@ -1,6 +1,6 @@
 import {FakeGenerator} from '../fake-generator';
 import {Scenario} from './scenario';
-import {addMinutes, subDays, subMinutes} from 'date-fns';
+import {subDays, subMinutes} from 'date-fns';
 
 export class NoReplyScenario extends Scenario {
     public static NAME = 'А я кивал';
@@ -25,14 +25,14 @@ export class NoReplyScenario extends Scenario {
                     .withDateTime(subDays(currentTime, 1))
                     .withText('Привет, тут бага приоритетная, надо поправить и захотфиксить: <a href="#">XX-123</a>')
             )
-            .wait(1000)
+            .wait(2000)
             .systemMessage(
                 chat!,
                 FakeGenerator.systemMessage()
-                    .withDateTime(addMinutes(subDays(currentTime, 1), 1))
-                    .withText('прошел день...')
+                    .withDateTime(subMinutes(currentTime, 2))
+                    // .withText('прошел день...')
+                    .withText('на следующий день...')
             )
-            .wait(1000)
             .outgoingMessage(
                 chat!,
                 FakeGenerator.textMessage(chatboxData.currentUser)
