@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/chatbox-simulator/static/css/main.9a74e091.css",
-    "main.js": "/chatbox-simulator/static/js/main.968c19e1.js",
+    "main.css": "/chatbox-simulator/static/css/main.5df96a3a.css",
+    "main.js": "/chatbox-simulator/static/js/main.95bfddac.js",
     "static/js/787.4c25a786.chunk.js": "/chatbox-simulator/static/js/787.4c25a786.chunk.js",
     "index.html": "/chatbox-simulator/index.html",
-    "main.9a74e091.css.map": "/chatbox-simulator/static/css/main.9a74e091.css.map",
-    "main.968c19e1.js.map": "/chatbox-simulator/static/js/main.968c19e1.js.map",
+    "main.5df96a3a.css.map": "/chatbox-simulator/static/css/main.5df96a3a.css.map",
+    "main.95bfddac.js.map": "/chatbox-simulator/static/js/main.95bfddac.js.map",
     "787.4c25a786.chunk.js.map": "/chatbox-simulator/static/js/787.4c25a786.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a74e091.css",
-    "static/js/main.968c19e1.js"
+    "static/css/main.5df96a3a.css",
+    "static/js/main.95bfddac.js"
   ]
 }
