@@ -16,6 +16,7 @@ import {SendMessageAction} from '../actions/send-message-action';
 import {PlayAudioAction} from '../actions/play-audio-action';
 import {AddUserAction} from '../actions/add-user-action';
 import {CallMessageAction} from '../actions/call-message-action';
+import {SelectChatAction} from '../actions/select-chat-action';
 
 export class ScenarioBuilder {
     public readonly actions: Action[] = [];
@@ -75,8 +76,11 @@ export class ScenarioBuilder {
         return this;
     }
 
-    switchChat(chatId: string) {
+    selectChat(chat: Chat) {
+        let action = new SelectChatAction(chat);
+        this.actions.push(action);
 
+        return this;
     }
 
     wait(duration: number) {

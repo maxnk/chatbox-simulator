@@ -1,6 +1,7 @@
 import {FakeGenerator} from '../fake-generator';
 import {Scenario} from './scenario';
 import {Chat} from '../../model/chat';
+import {addMinutes} from 'date-fns';
 
 export class UdpScenario extends Scenario {
     public static NAME = 'UDP';
@@ -17,12 +18,10 @@ export class UdpScenario extends Scenario {
 
         this.builder
             .init(chatboxData)
-            .outgoingMessage(
-                chat!,
-                FakeGenerator.textMessage(chatboxData.currentUser)
-                    .withDateTime(new Date())
-                    .withText('Народ, у нас пользователи жалуются, что им письма не приходят')
-            )
+            .selectChat(chat)
+            .writeMessage('Народ, у нас пользователи жалуются, что им письма не приходят', 50)
+            .wait(500)
+            .sendMessage(chat)
             .wait(3000)
             .playAudio(process.env.PUBLIC_URL + '/assets/crickets.mp3')
             .wait(2000);
@@ -33,7 +32,7 @@ export class UdpScenario extends Scenario {
                 .systemMessage(
                     chat!,
                     FakeGenerator.systemMessage()
-                        .withDateTime(new Date())
+                        .withDateTime(addMinutes(new Date(), 1))
                         .withText(otherUsers[i].name + ' не в сети')
                 );
         }
@@ -47,6 +46,7 @@ export class UdpScenario extends Scenario {
                 maxUsersChat = chats[i];
             }
         }
+
         return maxUsersChat;
     }
 }

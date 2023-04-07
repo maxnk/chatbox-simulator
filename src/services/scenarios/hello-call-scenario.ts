@@ -14,6 +14,10 @@ export class HelloCallScenario extends Scenario {
         chat!.messages = [];
         let user = chat?.users.find(user => user.id !== chatboxData.currentUser.id);
 
+        const avatarUrl = process.env.PUBLIC_URL + '/assets/owl.png';
+        chat!.avatarUrl = avatarUrl;
+        user!.avatarUrl = avatarUrl;
+
         const currentTime = new Date();
 
         let message = FakeGenerator.textMessage(user!)

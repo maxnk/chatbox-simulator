@@ -15,6 +15,10 @@ export class DebtCollectorScenario extends Scenario {
         let user = chat?.users.find(user => user.id !== chatboxData.currentUser.id);
         user!.name = 'Леонид Лидов';
 
+        const avatarUrl = process.env.PUBLIC_URL + '/assets/owl.png';
+        chat!.avatarUrl = avatarUrl;
+        user!.avatarUrl = avatarUrl;
+
         const currentTime = new Date();
 
         this.builder
