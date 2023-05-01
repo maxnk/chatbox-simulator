@@ -3,6 +3,7 @@ import {Scenario} from './scenario';
 
 export class LastQuestionScenario extends Scenario {
     public static NAME = 'Внимательность';
+    public static CODENAME = 'last-question';
 
     constructor() {
         super();

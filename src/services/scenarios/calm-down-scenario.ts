@@ -4,6 +4,7 @@ import {subMinutes} from 'date-fns';
 
 export class CalmDownScenario extends Scenario {
     public static NAME = 'Спокойствие';
+    public static CODENAME = 'calm-down';
 
     constructor() {
         super();

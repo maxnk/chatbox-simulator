@@ -4,6 +4,7 @@ import {subDays, subMinutes} from 'date-fns';
 
 export class NoReplyScenario extends Scenario {
     public static NAME = 'А я кивал';
+    public static CODENAME = 'no-reply';
 
     constructor() {
         super();

@@ -4,6 +4,7 @@ import {addMinutes, subMinutes} from 'date-fns';
 
 export class HelloScenario extends Scenario {
     public static NAME = 'Привет';
+    public static CODENAME = 'hello';
 
     constructor() {
         super();

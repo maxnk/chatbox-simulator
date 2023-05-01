@@ -4,6 +4,7 @@ import {addHours, subDays, subHours} from 'date-fns';
 
 export class MultiHelloScenario extends Scenario {
     public static NAME = 'Мультипривет';
+    public static CODENAME = 'multi-hello';
 
     constructor() {
         super();

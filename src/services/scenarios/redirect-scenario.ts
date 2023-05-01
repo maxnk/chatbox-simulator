@@ -7,6 +7,7 @@ const petrovich = require('petrovich');
 
 export class RedirectScenario extends Scenario {
     public static NAME = 'Редирект';
+    public static CODENAME = 'redirect';
 
     constructor() {
         super();

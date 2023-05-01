@@ -3,6 +3,7 @@ import {Scenario} from './scenario';
 
 export class MicroScreenshotScenario extends Scenario {
     public static NAME = 'Скриншотик';
+    public static CODENAME = 'micro-screenshot';
 
     constructor() {
         super();
@@ -15,7 +16,7 @@ export class MicroScreenshotScenario extends Scenario {
 
         let message1 = FakeGenerator.textMessage(user!);
         message1.dateTime = new Date();
-        message1.text = 'Вот такая ошибка вылезла на проде, посмотришь?';
+        message1.text = 'Вот такая ошибка вылезла, посмотришь?';
         message1.imageUrl = process.env.PUBLIC_URL + '/assets/micro-screenshot.png';
 
         this.builder

@@ -4,9 +4,10 @@ import {faker} from '@faker-js/faker';
 import {register} from 'timeago.js';
 import {observer} from 'mobx-react';
 import {configure} from 'mobx';
-import {MainContainer} from './components/main-container/main-container';
+import MainContainer from './components/main-container/main-container';
 import {setDefaultOptions} from 'date-fns';
 import {ru} from 'date-fns/locale';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 faker.locale = 'ru';
 
@@ -15,7 +16,12 @@ configure({enforceActions: 'always'});
 
 function App() {
   return (
-      <MainContainer />
+    <Router basename={process.env.PUBLIC_URL}>
+      <Routes>
+        <Route path='/' element={<MainContainer />} />
+        <Route path='/scenario/:currentScenario' element={<MainContainer />} />
+      </Routes>
+    </Router>
   );
 }
 
@@ -27,7 +33,7 @@ function initTimeago() {
     return [
       ['now', 'right now'] as [string, string],
       // ['%s sec', 'in %s seconds'] as [string, string],
-      [Math.floor((totalSec ?? 0) / 10) * 10  + ' sec', 'in %s seconds'] as [string, string],
+      [Math.floor((totalSec ?? 0) / 10) * 10 + ' sec', 'in %s seconds'] as [string, string],
       ['1 min', 'in 1 minute'] as [string, string],
       ['%s min', 'in %s minutes'] as [string, string],
       ['1 hr', 'in 1 hour'] as [string, string],

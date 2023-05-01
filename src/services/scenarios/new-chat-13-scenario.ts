@@ -3,6 +3,7 @@ import {Scenario} from './scenario';
 
 export class NewChat13Scenario extends Scenario {
     public static NAME = 'Новый чат (13)';
+    public static CODENAME = 'new-chat-13';
 
     constructor() {
         super();

@@ -3,6 +3,7 @@ import {Scenario} from './scenario';
 
 export class ForeplayScenario extends Scenario {
     public static NAME = 'Прелюдия';
+    public static CODENAME = 'foreplay';
 
     constructor() {
         super();

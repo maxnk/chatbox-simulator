@@ -5,6 +5,7 @@ import {addMinutes} from 'date-fns';
 
 export class UdpScenario extends Scenario {
     public static NAME = 'UDP';
+    public static CODENAME = 'udp';
 
     constructor() {
         super();

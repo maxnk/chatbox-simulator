@@ -3,6 +3,7 @@ import {Scenario} from './scenario';
 
 export class CookingPotScenario extends Scenario {
     public static NAME = 'Горшочек, не вари';
+    public static CODENAME = 'cooking-pot';
 
     constructor() {
         super();

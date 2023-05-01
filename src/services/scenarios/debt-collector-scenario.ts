@@ -4,6 +4,7 @@ import {subMinutes} from 'date-fns';
 
 export class DebtCollectorScenario extends Scenario {
     public static NAME = 'Коллектор';
+    public static CODENAME = 'debt-collector';
 
     constructor() {
         super();
@@ -23,6 +24,7 @@ export class DebtCollectorScenario extends Scenario {
 
         this.builder
             .init(chatboxData)
+            .selectChat(chat!)
             .callMessage(chat!, FakeGenerator.callMessage(user!)
                 .withIsMissed(true)
                 .withDateTime(subMinutes(currentTime, 30)))

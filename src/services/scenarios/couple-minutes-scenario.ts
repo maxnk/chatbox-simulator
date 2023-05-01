@@ -4,6 +4,7 @@ import {subHours, subMinutes} from 'date-fns';
 
 export class CoupleMinutesScenario extends Scenario {
     public static NAME = 'Пара минут';
+    public static CODENAME = 'couple-minutes';
 
     constructor() {
         super();
